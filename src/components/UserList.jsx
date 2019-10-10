@@ -23,7 +23,6 @@ class UserList extends Component {
 
         try {
             const resp = await axios.get('https://randomuser.me/api/?results=10');
-            console.log(resp);
             this.setState({
                 users: resp.data.results,
                 seed: resp.data.info.seed,
@@ -71,7 +70,6 @@ class UserList extends Component {
             link.setAttribute('download', `UserList.csv`);
             document.body.appendChild(link);
             link.click();
-
         } catch (error) {
             console.log(error);
         }
